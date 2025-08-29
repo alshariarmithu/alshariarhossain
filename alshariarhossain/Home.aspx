@@ -79,15 +79,48 @@
     </script>
 
     <!-- About Section -->
-    <section id="About" class="section">
-        <div class="container">
+    <section id="About" class="about-section">
+    <div class="about-container">
+        <!-- Heading -->
+        <div class="about-heading">
             <h2>About Me</h2>
-            <p>
-                I am a passionate software developer with expertise in modern web technologies. 
-                I love creating innovative solutions and building applications that make a difference.
-            </p>
+            <div class="heading-underline"></div>
         </div>
-    </section>
+
+        <!-- Grid Layout -->
+        <div class="about-grid">
+            <!-- Left: Image -->
+            <div class="about-image-container">
+                <div class="about-image-wrapper">
+                    <img src="/Images/img1.jpg" alt="Al Shariar Hossain" />
+                </div>
+            </div>
+
+            <!-- Right: Text -->
+            <div class="about-text">
+                <h3>Al Shariar Hossain</h3>
+                <p>
+                    Computer Science and Engineering undergraduate at
+                    <span>Khulna University of Engineering & Technology (KUET)</span>, 
+                    currently in my 3rd year with a strong academic foundation.
+                </p>
+
+                <p>
+                    Passionate about <span>Machine Learning and Artificial Intelligence</span>, 
+                    exploring how algorithms can learn patterns and make intelligent decisions. 
+                    I'm also developing expertise in web and mobile application development.
+                </p>
+
+                <p>
+                    I believe in continuous learning and contributing meaningfully 
+                    to the tech community through innovative projects and research 
+                    that create positive societal impact.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Education Section -->
     <section id="Education" class="section bg-white">
@@ -151,21 +184,211 @@
 
     <!-- Contact Section -->
     <section id="Contact" class="contact-section">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>
-                I'm always interested in hearing about new opportunities and projects.
-            </p>
-            <div class="contact-buttons">
-                <a href="mailto:your.email@example.com" class="contact-button">
-                    Email Me
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-button">
-                    LinkedIn
-                </a>
+        <div class="contact-container">
+            <!-- Heading -->
+            <div class="contact-heading">
+                <h2>Get In Touch</h2>
+                <div class="heading-underline"></div>
+                <p>
+                    Let's discuss your project or explore potential collaboration opportunities
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-text">
+                        <h3>Contact Information</h3>
+                        <p>
+                            I'm always interested in new opportunities and exciting projects. 
+                            Whether you have a question or just want to say hello, feel free to reach out.
+                        </p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <p class="contact-label">Email</p>
+                                <a href="mailto:alshariarhossain@gmail.com" class="contact-value">
+                                    alshariarhossain@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <p class="contact-label">Location</p>
+                                <p class="contact-value">Khulna, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h4>Connect With Me</h4>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/alshariar-hossain/" target="_blank" rel="noopener noreferrer" class="social-link linkedin" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/alshariarmithu" target="_blank" rel="noopener noreferrer" class="social-link github" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/alshariar.hossain.mithu" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3>Send a Message</h3>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form" id="contactForm">
+                        <div class="error-message" id="errorMessage"></div>
+
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <div class="input-container">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <div class="input-container">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <div class="textarea-container">
+                                <i class="fas fa-comment-dots textarea-icon"></i>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const formContainer = document.querySelector('.contact-form');
+
+            // Get form data
+            const formData = {
+                name: form.name.value.trim(),
+                email: form.email.value.trim(),
+                subject: form.subject.value.trim(),
+                message: form.message.value.trim()
+            };
+
+            // Clear previous errors
+            errorMessage.textContent = '';
+            errorMessage.style.display = 'none';
+
+            // Validation
+            if (!formData.name) {
+                showError('Please enter your name');
+                return;
+            }
+            if (!formData.email) {
+                showError('Please enter your email');
+                return;
+            }
+            if (!formData.subject) {
+                showError('Please enter a subject');
+                return;
+            }
+            if (!formData.message) {
+                showError('Please enter a message');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="loading-spinner"></div>Sending...';
+
+            try {
+                const response = await fetch('https://formspree.io/f/xjkoplkl', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    formContainer.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    form.reset();
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                        formContainer.style.display = 'block';
+                    }, 5000);
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                showError('Failed to send message. Please check your internet connection and try again.');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Send Message</span>';
+            }
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+
 
     <script>
         // Additional functionality for smooth hover effects

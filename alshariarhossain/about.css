@@ -1,0 +1,93 @@
+﻿/* Section Styling */
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Heading */
+.about-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+    .about-heading h2 {
+        font-size: 2rem;
+        font-weight: 300;
+        color: #1e293b;
+        margin-bottom: 0.75rem;
+    }
+
+.heading-underline {
+    width: 4rem;
+    height: 3px;
+    margin: 0 auto;
+    background: linear-gradient(to right, #94a3b8, #475569);
+}
+
+/* Grid Layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+/* Image */
+.about-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+    .about-image-wrapper img {
+        width: 320px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .about-image-wrapper img:hover {
+            transform: scale(1.02);
+        }
+
+/* Text Section */
+.about-text h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 1.5rem;
+}
+
+.about-text span {
+    color: #1e293b;
+    font-weight: 500;
+}

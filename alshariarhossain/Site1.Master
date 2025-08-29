@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/css/lucide-base.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <link rel="stylesheet" href="<%= ResolveUrl("~/about.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/contact.css") %>" />
+
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 
@@ -19,7 +22,6 @@
         <!-- Navigation Bar -->
         <nav class="navbar">
             <div class="navbar-container">
-                <!-- Brand/Logo -->
                 <button onclick="scrollToSection('Home')" class="navbar-brand">
                     Al Shariar Hossain
                 </button>

@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.css" />
+    <Content Include="contact.css" />
     <Content Include="Home.aspx" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
