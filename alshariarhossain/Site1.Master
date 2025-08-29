@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="alshariarhossain.Site1" %>
+
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server"></asp:ContentPlaceHolder></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/style.css") %>" />
+    <link rel="stylesheet" href="https://unpkg.com/lucide@0.263.1/dist/font/lucide.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <!-- Brand/Logo -->
+                <button onclick="scrollToSection('Home')" class="navbar-brand">
+                    Al Shariar Hossain
+                </button>
+
+                <!-- Desktop Navigation -->
+                <ul class="navbar-nav">
+                    <li>
+                        <button id="nav-Home" onclick="handleNavClick('Home')">Home</button>
+                    </li>
+                    <li>
+                        <button id="nav-About" onclick="handleNavClick('About')">About</button>
+                    </li>
+                    <li>
+                        <button id="nav-Education" onclick="handleNavClick('Education')">Education</button>
+                    </li>
+                    <li>
+                        <button id="nav-Skills" onclick="handleNavClick('Skills')">Skills</button>
+                    </li>
+                    <li>
+                        <button id="nav-Projects" onclick="handleNavClick('Projects')">Projects</button>
+                    </li>
+                    <li>
+                        <button id="nav-Contact" onclick="handleNavClick('Contact')">Contact</button>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span class="hamburger-line top" id="hamburger-top"></span>
+                    <span class="hamburger-line middle" id="hamburger-middle"></span>
+                    <span class="hamburger-line bottom" id="hamburger-bottom"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu closed" id="mobile-menu">
+                <ul class="mobile-menu-list">
+                    <li>
+                        <button id="mobile-nav-Home" onclick="handleMobileNavClick('Home')">Home</button>
+                    </li>
+                    <li>
+                        <button id="mobile-nav-About" onclick="handleMobileNavClick('About')">About</button>
+                    </li>
+                    <li>
+                        <button id="mobile-nav-Education" onclick="handleMobileNavClick('Education')">Education</button>
+                    </li>
+                    <li>
+                        <button id="mobile-nav-Skills" onclick="handleMobileNavClick('Skills')">Skills</button>
+                    </li>
+                    <li>
+                        <button id="mobile-nav-Projects" onclick="handleMobileNavClick('Projects')">Projects</button>
+                    </li>
+                    <li>
+                        <button id="mobile-nav-Contact" onclick="handleMobileNavClick('Contact')">Contact</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script>
+        // Global variables
+        let isMenuOpen = false;
+        let activeSection = 'Home';
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            updateActiveSection('Home');
+
+            // Setup scroll detection for active section highlighting
+            setupScrollDetection();
+        });
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerTop = document.getElementById('hamburger-top');
+            const hamburgerMiddle = document.getElementById('hamburger-middle');
+            const hamburgerBottom = document.getElementById('hamburger-bottom');
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('closed');
+                mobileMenu.classList.add('open');
+                hamburgerTop.classList.add('open');
+                hamburgerMiddle.classList.add('open');
+                hamburgerBottom.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('closed');
+                hamburgerTop.classList.remove('open');
+                hamburgerMiddle.classList.remove('open');
+                hamburgerBottom.classList.remove('open');
+            }
+        }
+
+        // Handle desktop navigation click
+        function handleNavClick(section) {
+            scrollToSection(section);
+            updateActiveSection(section);
+        }
+
+        // Handle mobile navigation click
+        function handleMobileNavClick(section) {
+            scrollToSection(section);
+            updateActiveSection(section);
+            // Close mobile menu
+            isMenuOpen = false;
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerTop = document.getElementById('hamburger-top');
+            const hamburgerMiddle = document.getElementById('hamburger-middle');
+            const hamburgerBottom = document.getElementById('hamburger-bottom');
+
+            mobileMenu.classList.remove('open');
+            mobileMenu.classList.add('closed');
+            hamburgerTop.classList.remove('open');
+            hamburgerMiddle.classList.remove('open');
+            hamburgerBottom.classList.remove('open');
+        }
+
+        // Scroll to section
+        function scrollToSection(section) {
+            const element = document.getElementById(section);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Update active section styling
+        function updateActiveSection(section) {
+            activeSection = section;
+
+            // Update desktop nav
+            const navItems = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'];
+            navItems.forEach(item => {
+                const navBtn = document.getElementById('nav-' + item);
+                const mobileNavBtn = document.getElementById('mobile-nav-' + item);
+
+                if (navBtn) {
+                    if (item === section) {
+                        navBtn.classList.add('active');
+                    } else {
+                        navBtn.classList.remove('active');
+                    }
+                }
+
+                if (mobileNavBtn) {
+                    if (item === section) {
+                        mobileNavBtn.classList.add('active');
+                    } else {
+                        mobileNavBtn.classList.remove('active');
+                    }
+                }
+            });
+        }
+
+        // Setup scroll detection to automatically update active section
+        function setupScrollDetection() {
+            const sections = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'];
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+
+                sections.forEach(section => {
+                    const element = document.getElementById(section);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        // Consider a section active if it's within the top 50% of the viewport
+                        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
+                            current = section;
+                        }
+                    }
+                });
+
+                // If we found a current section and it's different from active, update
+                if (current && current !== activeSection) {
+                    updateActiveSection(current);
+                }
+
+                // Default to Home if no section is clearly visible
+                if (!current && activeSection !== 'Home') {
+                    updateActiveSection('Home');
+                }
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = event.target.closest('.mobile-menu-btn');
+            const menuContent = event.target.closest('.mobile-menu');
+
+            if (isMenuOpen && !menuBtn && !menuContent) {
+                isMenuOpen = false;
+                const hamburgerTop = document.getElementById('hamburger-top');
+                const hamburgerMiddle = document.getElementById('hamburger-middle');
+                const hamburgerBottom = document.getElementById('hamburger-bottom');
+
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('closed');
+                hamburgerTop.classList.remove('open');
+                hamburgerMiddle.classList.remove('open');
+                hamburgerBottom.classList.remove('open');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            // Close mobile menu on desktop
+            if (window.innerWidth >= 768 && isMenuOpen) {
+                isMenuOpen = false;
+                const mobileMenu = document.getElementById('mobile-menu');
+                const hamburgerTop = document.getElementById('hamburger-top');
+                const hamburgerMiddle = document.getElementById('hamburger-middle');
+                const hamburgerBottom = document.getElementById('hamburger-bottom');
+
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('closed');
+                hamburgerTop.classList.remove('open');
+                hamburgerMiddle.classList.remove('open');
+                hamburgerBottom.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
