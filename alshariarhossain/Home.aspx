@@ -10,7 +10,7 @@
     <section id="Home" class="hero-section">
         <div class="hero-content">
             <div class="text-center">
-                <img class="profile-image" src="~/Images/profile.jpg" alt="Al Shariar Hossain">
+                <img class="profile-image" src="/Images/profile.jpg" alt="Al Shariar Hossain">
                 
                 <h4 class="intro-text">Hello, I'm</h4>
                 <h1 class="name-heading">Al Shariar Hossain</h1>
@@ -35,7 +35,7 @@
                     <div class="social-grid">
                         <div class="social-card" onclick="window.open('https://github.com/alshariarmithu', '_blank')">
                             <div class="flex flex-col items-center">
-                                <i class="social-icon lucide-github"></i>
+                                <i class="social-icon fab fa-github"></i>
                                 <span class="social-platform">GitHub</span>
                                 <span class="social-handle">@alshariarmithu</span>
                             </div>
@@ -43,7 +43,7 @@
                         
                         <div class="social-card" onclick="window.open('https://www.linkedin.com/in/alshariar-hossain/', '_blank')">
                             <div class="flex flex-col items-center">
-                                <i class="social-icon lucide-linkedin"></i>
+                                <i class="social-icon fab fa-linkedin"></i>
                                 <span class="social-platform">LinkedIn</span>
                                 <span class="social-handle">alshariar.hossain</span>
                             </div>
@@ -51,7 +51,7 @@
                         
                         <div class="social-card" onclick="window.location.href='mailto:alshariarhossain@gmail.com'">
                             <div class="flex flex-col items-center">
-                                <i class="social-icon lucide-mail"></i>
+                                <i class="social-icon fas fa-envelope"></i>
                                 <span class="social-platform">Email</span>
                                 <span class="social-handle">alshariarhossain@gmail.com</span>
                             </div>
@@ -59,7 +59,7 @@
                         
                         <div class="social-card" onclick="window.open('https://facebook.com/alshariar.hossain.mithu', '_blank')">
                             <div class="flex flex-col items-center">
-                                <i class="social-icon lucide-facebook"></i>
+                                <i class="social-icon fab fa-facebook"></i>
                                 <span class="social-platform">Facebook</span>
                                 <span class="social-handle">alshariar.hossain.mithu</span>
                             </div>
@@ -195,4 +195,5 @@
             }
         });
     </script>
+
 </asp:Content>
