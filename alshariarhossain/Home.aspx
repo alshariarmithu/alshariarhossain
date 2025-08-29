@@ -123,37 +123,192 @@
 
 
     <!-- Education Section -->
-    <section id="Education" class="section bg-white">
+    <section id="Education" class="section">
         <div class="container">
-            <h2>Education</h2>
-            <div class="education-card">
-                <h3>Bachelor of Science</h3>
-                <p>Computer Science & Engineering</p>
-                <p class="university">University Name • Year</p>
+            <div class="section-header">
+                <h2>Education Timeline</h2>
+                <p>My academic journey and educational milestones</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="education-card">
+                    <div class="timeline-dot current">
+                        <div class="dot-inner"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="status-badge current">Currently in 3rd Year</div>
+                        <h3>Bachelor of Science in Computer Science & Engineering</h3>
+                        <p class="university">Khulna University of Engineering & Technology (KUET)</p>
+                        <div class="grade-info">
+                            <div class="grade-label">
+                                <svg class="award-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="8" r="7"/>
+                                    <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                                </svg>
+                                <span>CGPA</span>
+                            </div>
+                            <span class="grade-value">3.84</span>
+                        </div>
+                    </div>
+                    <div class="duration-badge">
+                        <span>2022 - Present</span>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="timeline-dot">
+                        <div class="dot-inner"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p class="university">Islamabad Collegiate School Khulna</p>
+                        <div class="grade-info">
+                            <div class="grade-label">
+                                <svg class="award-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="8" r="7"/>
+                                    <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                                </svg>
+                                <span>GPA</span>
+                            </div>
+                            <span class="grade-value">5.00</span>
+                        </div>
+                    </div>
+                    <div class="duration-badge">
+                        <span>2019 - 2021</span>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="timeline-dot">
+                        <div class="dot-inner"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <p class="university">Islamabad Collegiate School Khulna</p>
+                        <div class="grade-info">
+                            <div class="grade-label">
+                                <svg class="award-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="8" r="7"/>
+                                    <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                                </svg>
+                                <span>GPA</span>
+                            </div>
+                            <span class="grade-value">5.00</span>
+                        </div>
+                    </div>
+                    <div class="duration-badge">
+                        <span>2017 - 2019</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+
     <!-- Skills Section -->
-    <section id="Skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Frontend</h3>
-                    <p>React, Next.js, TypeScript, HTML, CSS</p>
+    <section id="Skills" class="skills-section">
+    <div class="skills-container">
+        <div class="section-header">
+            <h2 class="section-title">Professional Skills</h2>
+            <p class="section-subtitle">Technologies and tools I work with</p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
                 </div>
-                <div class="skill-card">
-                    <h3>Backend</h3>
-                    <p>ASP.NET, C#, Node.js, SQL Server</p>
+                <h3 class="skill-title">Frontend Development</h3>
+                <div class="skill-list">
+                    <span class="skill-item">React.js</span>
+                    <span class="skill-item">Next.js</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">HTML5</span>
+                    <span class="skill-item">CSS3/SCSS</span>
+                    <span class="skill-item">JavaScript ES6+</span>
                 </div>
-                <div class="skill-card">
-                    <h3>Tools</h3>
-                    <p>Git, Visual Studio, VS Code</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" data-width="90%"></div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="skill-title">Backend Development</h3>
+                <div class="skill-list">
+                    <span class="skill-item">ASP.NET Core</span>
+                    <span class="skill-item">C#</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">SQL Server</span>
+                    <span class="skill-item">Entity Framework</span>
+                    <span class="skill-item">Web API</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="progress-bar" data-width="85%"></div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="skill-title">Database & Cloud</h3>
+                <div class="skill-list">
+                    <span class="skill-item">SQL Server</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">Azure</span>
+                    <span class="skill-item">AWS</span>
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">Redis</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="progress-bar" data-width="80%"></div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="skill-title">Development Tools</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Visual Studio</span>
+                    <span class="skill-item">VS Code</span>
+                    <span class="skill-item">Git & GitHub</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Postman</span>
+                    <span class="skill-item">Azure DevOps</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="progress-bar" data-width="88%"></div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <div class="skills-stats">
+            <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Projects Section -->
     <section id="Projects" class="section bg-white">

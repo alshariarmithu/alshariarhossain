@@ -1,0 +1,230 @@
+﻿
+.section {
+    padding: 3rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.container {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+        color: #6b7280;
+        font-size: 1rem;
+        max-width: 36rem;
+        margin: 0 auto;
+    }
+
+.timeline-container {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #d1d5db;
+    z-index: 1;
+}
+
+.education-card {
+    position: relative;
+    margin-bottom: 2.5rem;
+    margin-left: 3rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -4.25rem;
+    top: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border: 2px solid #9ca3af;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .timeline-dot.current {
+        border-color: #3b82f6;
+    }
+
+.dot-inner {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #9ca3af;
+}
+
+.timeline-dot.current .dot-inner {
+    background-color: #3b82f6;
+}
+
+.card-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 0.75rem;
+}
+
+    .card-content:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+    float: right;
+}
+
+    .status-badge.current {
+        background-color: #dbeafe;
+        color: #1d4ed8;
+    }
+
+.card-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    clear: both;
+}
+
+.university {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.grade-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+}
+
+.grade-label {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+.award-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    color: #6b7280;
+}
+
+.grade-value {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: #1f2937;
+}
+
+.duration-badge {
+    display: flex;
+    justify-content: center;
+}
+
+    .duration-badge span {
+        background: linear-gradient(to right, #6b7280, #374151);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.025em;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 0;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-header p {
+        font-size: 0.875rem;
+    }
+
+    .timeline-line {
+        left: 1rem;
+    }
+
+    .education-card {
+        margin-left: 2.5rem;
+    }
+
+    .timeline-dot {
+        left: -3.75rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+        .card-content h3 {
+            font-size: 1rem;
+        }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .card-content {
+        padding: 0.875rem;
+    }
+
+    .status-badge {
+        font-size: 0.6875rem;
+        padding: 0.1875rem 0.5625rem;
+    }
+}

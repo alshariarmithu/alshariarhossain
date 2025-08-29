@@ -13,6 +13,8 @@
     
     <link rel="stylesheet" href="<%= ResolveUrl("~/about.css") %>" />
     <link rel="stylesheet" href="<%= ResolveUrl("~/contact.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/education.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/skills.css") %>" />
 
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
@@ -46,6 +48,9 @@
                     <li>
                         <button id="nav-Contact" onclick="handleNavClick('Contact')">Contact</button>
                     </li>
+                    <li>
+                        <button id="" onclick="">Login</button>
+                    </li>
                 </ul>
 
                 <!-- Mobile Menu Button -->
@@ -76,6 +81,9 @@
                     </li>
                     <li>
                         <button id="mobile-nav-Contact" onclick="handleMobileNavClick('Contact')">Contact</button>
+                    </li>
+                    <li>
+                        <button id="" onclick="">Login</button>
                     </li>
                 </ul>
             </div>
