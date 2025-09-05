@@ -206,135 +206,47 @@
     </section>
 
 
-    <!-- Skills Section -->
-    <section id="Skills" class="skills-section">
-    <div class="skills-container">
-        <div class="section-header">
-            <h2 class="section-title">Professional Skills</h2>
-            <p class="section-subtitle">Technologies and tools I work with</p>
-        </div>
-        
-        <div class="skills-grid">
-            <div class="skill-category">
-                <div class="skill-icon">
-                    <i class="fas fa-code"></i>
+     <section id="Skills" class="skills-section">
+            <div class="skills-container">
+                <div class="section-header">
+                    <h2 class="section-title">Professional Skills</h2>
+                    <p class="section-subtitle">Technologies and tools I work with</p>
                 </div>
-                <h3 class="skill-title">Frontend Development</h3>
-                <div class="skill-list">
-                    <span class="skill-item">React.js</span>
-                    <span class="skill-item">Next.js</span>
-                    <span class="skill-item">TypeScript</span>
-                    <span class="skill-item">HTML5</span>
-                    <span class="skill-item">CSS3/SCSS</span>
-                    <span class="skill-item">JavaScript ES6+</span>
+                
+                <div id="skillsGrid" runat="server" class="skills-grid">
+                    <!-- Skills will be dynamically loaded here -->
                 </div>
-                <div class="skill-progress">
-                    <div class="progress-bar" data-width="90%"></div>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <div class="skill-icon">
-                    <i class="fas fa-server"></i>
-                </div>
-                <h3 class="skill-title">Backend Development</h3>
-                <div class="skill-list">
-                    <span class="skill-item">ASP.NET Core</span>
-                    <span class="skill-item">C#</span>
-                    <span class="skill-item">Node.js</span>
-                    <span class="skill-item">SQL Server</span>
-                    <span class="skill-item">Entity Framework</span>
-                    <span class="skill-item">Web API</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress-bar" data-width="85%"></div>
+                
+                <div class="skills-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="skill-category">
-                <div class="skill-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3 class="skill-title">Database & Cloud</h3>
-                <div class="skill-list">
-                    <span class="skill-item">SQL Server</span>
-                    <span class="skill-item">MySQL</span>
-                    <span class="skill-item">Azure</span>
-                    <span class="skill-item">AWS</span>
-                    <span class="skill-item">MongoDB</span>
-                    <span class="skill-item">Redis</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress-bar" data-width="80%"></div>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <div class="skill-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3 class="skill-title">Development Tools</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Visual Studio</span>
-                    <span class="skill-item">VS Code</span>
-                    <span class="skill-item">Git & GitHub</span>
-                    <span class="skill-item">Docker</span>
-                    <span class="skill-item">Postman</span>
-                    <span class="skill-item">Azure DevOps</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress-bar" data-width="88%"></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="skills-stats">
-            <div class="stat-item">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Technologies</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Client Satisfaction</div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="Projects" class="section bg-white">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p>A responsive portfolio website built with ASP.NET and modern web technologies.</p>
-                    <div class="tech-tags">
-                        <span>ASP.NET</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Web Application</h3>
-                    <p>A full-stack web application with modern features and responsive design.</p>
-                    <div class="tech-tags">
-                        <span>C#</span>
-                        <span>SQL Server</span>
-                        <span>Bootstrap</span>
-                    </div>
+        <!-- Projects Section -->
+        <section id="Projects" class="section bg-white">
+            <div class="container">
+                <h2>Projects</h2>
+                <div id="projectsGrid" runat="server" class="projects-grid">
+                    <!-- Projects will be dynamically loaded here -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Contact Section -->
     <section id="Contact" class="contact-section">
@@ -570,6 +482,24 @@
                     this.style.transform = 'scale(1)';
                 });
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressBars = document.querySelectorAll('.progress-bar');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            progressBars.forEach(bar => {
+                observer.observe(bar);
+            });
         });
     </script>
 
