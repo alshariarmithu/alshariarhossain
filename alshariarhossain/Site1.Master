@@ -1,6 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="alshariarhossain.Site1" %>
 
-
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -21,39 +20,29 @@
 
 <body>
     <form id="form1" runat="server">
-        <!-- Navigation Bar -->
         <nav class="navbar">
             <div class="navbar-container">
                 <button onclick="scrollToSection('Home')" class="navbar-brand">
                     Al Shariar Hossain
                 </button>
-
-                <!-- Desktop Navigation -->
                 <ul class="navbar-nav">
+                    <li><button id="nav-Home" onclick="handleNavClick('Home')">Home</button></li>
+                    <li><button id="nav-About" onclick="handleNavClick('About')">About</button></li>
+                    <li><button id="nav-Education" onclick="handleNavClick('Education')">Education</button></li>
+                    <li><button id="nav-Skills" onclick="handleNavClick('Skills')">Skills</button></li>
+                    <li><button id="nav-Projects" onclick="handleNavClick('Projects')">Projects</button></li>
+                    <li><button id="nav-Contact" onclick="handleNavClick('Contact')">Contact</button></li>
                     <li>
-                        <button id="nav-Home" onclick="handleNavClick('Home')">Home</button>
+                        <a href="Login.aspx"
+                            style="display: inline-block; padding: 10px 20px; background: #1e293b; color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15);"
+                            onmouseover="this.style.background='#334155';this.style.transform='translateY(-2px)';"
+                            onmouseout="this.style.background='#1e293b';this.style.transform='translateY(0)';">
+                            Login
+                        </a>
                     </li>
-                    <li>
-                        <button id="nav-About" onclick="handleNavClick('About')">About</button>
-                    </li>
-                    <li>
-                        <button id="nav-Education" onclick="handleNavClick('Education')">Education</button>
-                    </li>
-                    <li>
-                        <button id="nav-Skills" onclick="handleNavClick('Skills')">Skills</button>
-                    </li>
-                    <li>
-                        <button id="nav-Projects" onclick="handleNavClick('Projects')">Projects</button>
-                    </li>
-                    <li>
-                        <button id="nav-Contact" onclick="handleNavClick('Contact')">Contact</button>
-                    </li>
-                    <li>
-                        <button id="" onclick="">Login</button>
-                    </li>
+
                 </ul>
 
-                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                     <span class="hamburger-line top" id="hamburger-top"></span>
                     <span class="hamburger-line middle" id="hamburger-middle"></span>
@@ -61,55 +50,33 @@
                 </button>
             </div>
 
-            <!-- Mobile Menu -->
             <div class="mobile-menu closed" id="mobile-menu">
                 <ul class="mobile-menu-list">
-                    <li>
-                        <button id="mobile-nav-Home" onclick="handleMobileNavClick('Home')">Home</button>
-                    </li>
-                    <li>
-                        <button id="mobile-nav-About" onclick="handleMobileNavClick('About')">About</button>
-                    </li>
-                    <li>
-                        <button id="mobile-nav-Education" onclick="handleMobileNavClick('Education')">Education</button>
-                    </li>
-                    <li>
-                        <button id="mobile-nav-Skills" onclick="handleMobileNavClick('Skills')">Skills</button>
-                    </li>
-                    <li>
-                        <button id="mobile-nav-Projects" onclick="handleMobileNavClick('Projects')">Projects</button>
-                    </li>
-                    <li>
-                        <button id="mobile-nav-Contact" onclick="handleMobileNavClick('Contact')">Contact</button>
-                    </li>
-                    <li>
-                        <button id="" onclick="">Login</button>
-                    </li>
+                    <li><button id="mobile-nav-Home" onclick="handleMobileNavClick('Home')">Home</button></li>
+                    <li><button id="mobile-nav-About" onclick="handleMobileNavClick('About')">About</button></li>
+                    <li><button id="mobile-nav-Education" onclick="handleMobileNavClick('Education')">Education</button></li>
+                    <li><button id="mobile-nav-Skills" onclick="handleMobileNavClick('Skills')">Skills</button></li>
+                    <li><button id="mobile-nav-Projects" onclick="handleMobileNavClick('Projects')">Projects</button></li>
+                    <li><button id="mobile-nav-Contact" onclick="handleMobileNavClick('Contact')">Contact</button></li>
+                    <li><a href="Login.aspx">Login</a></li>
                 </ul>
             </div>
         </nav>
 
-        <!-- Content Wrapper -->
         <div class="content-wrapper">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
 
     <script>
-        // Global variables
         let isMenuOpen = false;
         let activeSection = 'Home';
 
-        // Initialize on page load
         window.addEventListener('DOMContentLoaded', function () {
             updateActiveSection('Home');
-
-            // Setup scroll detection for active section highlighting
             setupScrollDetection();
         });
 
-        // Toggle mobile menu
         function toggleMobileMenu() {
             isMenuOpen = !isMenuOpen;
             const mobileMenu = document.getElementById('mobile-menu');
@@ -132,17 +99,14 @@
             }
         }
 
-        // Handle desktop navigation click
         function handleNavClick(section) {
             scrollToSection(section);
             updateActiveSection(section);
         }
 
-        // Handle mobile navigation click
         function handleMobileNavClick(section) {
             scrollToSection(section);
             updateActiveSection(section);
-            // Close mobile menu
             isMenuOpen = false;
             const mobileMenu = document.getElementById('mobile-menu');
             const hamburgerTop = document.getElementById('hamburger-top');
@@ -156,7 +120,6 @@
             hamburgerBottom.classList.remove('open');
         }
 
-        // Scroll to section
         function scrollToSection(section) {
             const element = document.getElementById(section);
             if (element) {
@@ -164,65 +127,47 @@
             }
         }
 
-        // Update active section styling
         function updateActiveSection(section) {
             activeSection = section;
 
-            // Update desktop nav
             const navItems = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'];
             navItems.forEach(item => {
                 const navBtn = document.getElementById('nav-' + item);
                 const mobileNavBtn = document.getElementById('mobile-nav-' + item);
 
                 if (navBtn) {
-                    if (item === section) {
-                        navBtn.classList.add('active');
-                    } else {
-                        navBtn.classList.remove('active');
-                    }
+                    navBtn.classList.toggle('active', item === section);
                 }
-
                 if (mobileNavBtn) {
-                    if (item === section) {
-                        mobileNavBtn.classList.add('active');
-                    } else {
-                        mobileNavBtn.classList.remove('active');
-                    }
+                    mobileNavBtn.classList.toggle('active', item === section);
                 }
             });
         }
 
-        // Setup scroll detection to automatically update active section
         function setupScrollDetection() {
             const sections = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'];
 
             window.addEventListener('scroll', function () {
                 let current = '';
-
                 sections.forEach(section => {
                     const element = document.getElementById(section);
                     if (element) {
                         const rect = element.getBoundingClientRect();
-                        // Consider a section active if it's within the top 50% of the viewport
                         if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
                             current = section;
                         }
                     }
                 });
 
-                // If we found a current section and it's different from active, update
                 if (current && current !== activeSection) {
                     updateActiveSection(current);
                 }
-
-                // Default to Home if no section is clearly visible
                 if (!current && activeSection !== 'Home') {
                     updateActiveSection('Home');
                 }
             });
         }
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function (event) {
             const mobileMenu = document.getElementById('mobile-menu');
             const menuBtn = event.target.closest('.mobile-menu-btn');
@@ -242,9 +187,7 @@
             }
         });
 
-        // Handle window resize
         window.addEventListener('resize', function () {
-            // Close mobile menu on desktop
             if (window.innerWidth >= 768 && isMenuOpen) {
                 isMenuOpen = false;
                 const mobileMenu = document.getElementById('mobile-menu');
