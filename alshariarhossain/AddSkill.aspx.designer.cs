@@ -11,7 +11,7 @@ namespace alshariarhossain
 {
 
 
-    public partial class Dashboard
+    public partial class AddSkill
     {
 
         /// <summary>
@@ -24,75 +24,57 @@ namespace alshariarhossain
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblEmail control.
+        /// txtSkillName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtSkillName;
 
         /// <summary>
-        /// lblSkillsCount control.
+        /// ddlCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSkillsCount;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
 
         /// <summary>
-        /// lblProjectsCount control.
+        /// txtProficiency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProjectsCount;
+        protected global::System.Web.UI.WebControls.TextBox txtProficiency;
 
         /// <summary>
-        /// lblLastUpdate control.
+        /// txtIconClass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastUpdate;
+        protected global::System.Web.UI.WebControls.TextBox txtIconClass;
 
         /// <summary>
-        /// rptSkills control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSkills;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
-        /// pnlNoSkills control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoSkills;
-
-        /// <summary>
-        /// rptProjects control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptProjects;
-
-        /// <summary>
-        /// pnlNoProjects control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoProjects;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

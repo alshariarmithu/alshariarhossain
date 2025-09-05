@@ -6,7 +6,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- Home Section -->
     <section id="Home" class="hero-section">
         <div class="hero-content">
             <div class="text-center">
