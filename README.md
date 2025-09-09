@@ -47,7 +47,7 @@ Each project includes:
 An interactive **contact form** to easily get in touch with me.  
 You can also reach me via:  
 - **Email**: alshariarhossain@gmail.com
-- **LinkedIn**:  
+- **LinkedIn**:  https://www.linkedin.com/in/alshariar-hossain
 - **GitHub**: https://github.com/alshariarmithu
 
 ---
