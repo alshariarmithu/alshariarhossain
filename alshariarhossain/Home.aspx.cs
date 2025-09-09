@@ -173,12 +173,14 @@ namespace alshariarhossain
             {
                 string technologies = project["Technologies"].ToString();
                 string[] techArray = technologies.Split(',');
+                string imageUrl = project["ImageUrl"].ToString();
 
                 html += $@"
-                <div class='project-card'>
-                    <h3>{project["ProjectName"]}</h3>
-                    <p>{project["Description"]}</p>
-                    <div class='tech-tags'>";
+        <div class='project-card'>
+            {(string.IsNullOrEmpty(imageUrl) ? "" : $"<img src='{imageUrl}' alt='{project["ProjectName"]}' class='project-image' style='width: 300px; height: 300px; object-fit: cover; border-radius: 8px; margin: 0 auto 16px; display: block;' />")}
+            <h3>{project["ProjectName"]}</h3>
+            <p>{project["Description"]}</p>
+            <div class='tech-tags'>";
 
                 foreach (string tech in techArray)
                 {
@@ -201,15 +203,15 @@ namespace alshariarhossain
                     if (!string.IsNullOrEmpty(projectUrl))
                     {
                         html += $@"<a href='{projectUrl}' target='_blank' class='project-link'>
-                                  <i class='fas fa-external-link-alt'></i> Live Demo
-                                  </a>";
+                              <i class='fas fa-external-link-alt'></i> Live Demo
+                          </a>";
                     }
 
                     if (!string.IsNullOrEmpty(githubUrl))
                     {
                         html += $@"<a href='{githubUrl}' target='_blank' class='project-link'>
-                                  <i class='fab fa-github'></i> GitHub
-                                  </a>";
+                              <i class='fab fa-github'></i> GitHub
+                          </a>";
                     }
 
                     html += "</div>";
@@ -220,5 +222,6 @@ namespace alshariarhossain
 
             return html;
         }
+
     }
 }

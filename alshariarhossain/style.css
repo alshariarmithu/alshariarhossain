@@ -359,6 +359,7 @@ body {
         background-color: rgba(255, 255, 255, 0.9);
     }
 
+
 .flex {
     display: flex;
 }
@@ -429,6 +430,7 @@ body {
 
 
 /* Projects Section */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -442,6 +444,15 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
+    .project-card img.project-image {
+        width: 150px; 
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 0 auto 16px;
+        display: block;
+    }
 
     .project-card h3 {
         color: #1e293b;

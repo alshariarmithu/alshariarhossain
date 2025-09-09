@@ -214,20 +214,19 @@
                 </div>
                 
                 <div id="skillsGrid" runat="server" class="skills-grid">
-                    <!-- Skills will be dynamically loaded here -->
                 </div>
                 
                 <div class="skills-stats">
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
+                        <div class="stat-number">2+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">50+</div>
+                        <div class="stat-number">10+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">15+</div>
+                        <div class="stat-number">7+</div>
                         <div class="stat-label">Technologies</div>
                     </div>
                     <div class="stat-item">
@@ -243,7 +242,6 @@
             <div class="container">
                 <h2>Projects</h2>
                 <div id="projectsGrid" runat="server" class="projects-grid">
-                    <!-- Projects will be dynamically loaded here -->
                 </div>
             </div>
         </section>
@@ -251,7 +249,6 @@
     <!-- Contact Section -->
     <section id="Contact" class="contact-section">
         <div class="contact-container">
-            <!-- Heading -->
             <div class="contact-heading">
                 <h2>Get In Touch</h2>
                 <div class="heading-underline"></div>
@@ -325,7 +322,7 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <form class="contact-form" id="contactForm">
+                    <div class="contact-form" id="contactForm">
                         <div class="error-message" id="errorMessage"></div>
 
                         <div class="form-group">
@@ -361,13 +358,14 @@
                             <i class="fas fa-paper-plane"></i>
                             <span>Send Message</span>
                         </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
+        
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -377,89 +375,57 @@
             const successMessage = document.getElementById('successMessage');
             const formContainer = document.querySelector('.contact-form');
 
-            // Get form data
-            const formData = {
-                name: form.name.value.trim(),
-                email: form.email.value.trim(),
-                subject: form.subject.value.trim(),
-                message: form.message.value.trim()
-            };
+            const formData = new URLSearchParams();
+            formData.append('name', form.name.value.trim());
+            formData.append('email', form.email.value.trim());
+            formData.append('subject', form.subject.value.trim());
+            formData.append('message', form.message.value.trim());
 
-            // Clear previous errors
             errorMessage.textContent = '';
             errorMessage.style.display = 'none';
 
-            // Validation
-            if (!formData.name) {
-                showError('Please enter your name');
-                return;
-            }
-            if (!formData.email) {
-                showError('Please enter your email');
-                return;
-            }
-            if (!formData.subject) {
-                showError('Please enter a subject');
-                return;
-            }
-            if (!formData.message) {
-                showError('Please enter a message');
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formData.email)) {
-                showError('Please enter a valid email address');
-                return;
-            }
-
-            // Show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<div class="loading-spinner"></div>Sending...';
 
             try {
                 const response = await fetch('https://formspree.io/f/xjkoplkl', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
+                    headers: 'application/json',
+                    body: "Hello"
                 });
 
+                const data = await response.json();
+                console.log(data)
+
                 if (response.ok) {
-                    // Show success message
                     formContainer.style.display = 'none';
                     successMessage.style.display = 'block';
                     form.reset();
 
-                    // Hide success message after 5 seconds
                     setTimeout(() => {
                         successMessage.style.display = 'none';
                         formContainer.style.display = 'block';
                     }, 5000);
                 } else {
-                    throw new Error('Failed to send message');
+                    throw new Error(data.error || 'Failed to send message');
                 }
             } catch (error) {
-                showError('Failed to send message. Please check your internet connection and try again.');
+                errorMessage.textContent = 'Failed to send message. Please check your internet connection and try again.';
+                errorMessage.style.display = 'block';
             } finally {
-                // Reset button state
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Send Message</span>';
             }
-
-            function showError(message) {
-                errorMessage.textContent = message;
-                errorMessage.style.display = 'block';
-            }
         });
+
+
     </script>
 
 
     <script>
-        // Additional functionality for smooth hover effects
+
         document.addEventListener('DOMContentLoaded', function () {
-            // Add hover effects to buttons
+       
             const buttons = document.querySelectorAll('button, a');
             buttons.forEach(button => {
                 if (button.classList.contains('contact-button')) {
@@ -472,7 +438,7 @@
                 }
             });
 
-            // Add smooth hover effect to main CTA button
+        
             const ctaButton = document.querySelector('.cta-button');
             if (ctaButton) {
                 ctaButton.addEventListener('mouseenter', function () {
