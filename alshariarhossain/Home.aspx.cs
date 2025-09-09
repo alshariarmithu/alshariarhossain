@@ -41,7 +41,6 @@ namespace alshariarhossain
 
                         if (dt.Rows.Count > 0)
                         {
-                            // Group skills by category using traditional grouping
                             var skillsByCategory = new Dictionary<string, List<DataRow>>();
 
                             foreach (DataRow row in dt.Rows)
@@ -61,7 +60,7 @@ namespace alshariarhossain
             }
             catch (Exception ex)
             {
-                // Log error or handle gracefully
+          
                 skillsGrid.InnerHtml = "<div class='error-message'>Error loading skills. Please try again later.</div>";
             }
         }

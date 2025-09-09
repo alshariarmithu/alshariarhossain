@@ -45,6 +45,15 @@ namespace alshariarhossain
                         reader.Read();
                         Session["UserId"] = reader["Id"].ToString();
                         Session["Email"] = reader["Email"].ToString();
+
+                        HttpCookie loginCookie = new HttpCookie("UserLogin");
+                        loginCookie["UserId"] = reader["Id"].ToString();
+                        loginCookie["Email"] = reader["Email"].ToString();
+                        loginCookie.Expires = DateTime.Now.AddDays(7);
+                        Response.Cookies.Add(loginCookie);
+
+                        Response.Redirect("Dashboard.aspx");
+
                         Response.Redirect("Dashboard.aspx");
                     }
                     else

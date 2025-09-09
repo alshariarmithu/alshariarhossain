@@ -22,7 +22,9 @@
                 </p>
                 
                 <div class="button-container">
-                    <a href="#" class="primary-button">
+                    <a href="https://drive.google.com/uc?export=download&id=1FaUghnFZXB37L67WqF0lY4VFjL0yx9Jc" 
+                        class="primary-button" 
+                        download="AlShariarHossain_CV.pdf">
                         Download CV
                     </a>
                     <a href="#Contact" class="secondary-button">
@@ -391,7 +393,7 @@
                 const response = await fetch('https://formspree.io/f/xjkoplkl', {
                     method: 'POST',
                     headers: 'application/json',
-                    body: "Hello"
+                    body: formData
                 });
 
                 const data = await response.json();
