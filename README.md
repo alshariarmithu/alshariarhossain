@@ -38,9 +38,8 @@ A showcase of my technical and soft skills.
 Highlighting some of my best work with live demos and source code.  
 Each project includes:  
 - **Title**  : My Portfolio (alshariarhossain)
-- **Description**  
-- **Tech Stack**  
-- **Links** (Live demo / GitHub repo)  
+- **Description**  : My portfolio as an assignment for the course CSE 3100
+- **Tech Stack**  : ASP.NET , C#,  MySQL 
 
 ---
 
@@ -48,7 +47,7 @@ Each project includes:
 An interactive **contact form** to easily get in touch with me.  
 You can also reach me via:  
 - **Email**: alshariarhossain@gmail.com
-- **LinkedIn**:  
+- **LinkedIn**:  https://www.linkedin.com/in/alshariar-hossain
 - **GitHub**: https://github.com/alshariarmithu
 
 ---
